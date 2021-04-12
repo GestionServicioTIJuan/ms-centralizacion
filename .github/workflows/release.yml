@@ -29,4 +29,4 @@ jobs:
         password: 3cc777bb-3684-42d0-a735-e4ef8aa1ff3c
 
     - name: Build image
-      run: ./mvnw clean spring-boot:build-image -Dspring-boot.build-image.imageName=juarezer7c/${project.artifactId}:${project.version} -Dspring-boot.build-image.publish=true
+      run: ./mvnw clean spring-boot:build-image -Dspring-boot.build-image.imageName=juarezer7c/confi:1 -Dspring-boot.build-image.publish=true
