@@ -28,15 +28,5 @@ jobs:
         username: juarezer7c
         password: 3cc777bb-3684-42d0-a735-e4ef8aa1ff3c
 
-    - name: Build and push
-      if: github.ref == 'refs/heads/master'
-      id: docker_build
-      uses: docker/build-push-action@v2
-      with:
-          context: .
-          file: ./Dockerfile
-          push: true
-          tags: usr/src/app:latest
-      
-    - name: Image digest
-      run: echo ${{ steps.docker_build.outputs.digest }}
+    - name: Build image
+      run: ./mvnw clean spring-boot:build-image -Dspring-boot.build-image.imageName=juarezer7c/${project.artifactId}:${project.version} -Dspring-boot.build-image.publish=true
