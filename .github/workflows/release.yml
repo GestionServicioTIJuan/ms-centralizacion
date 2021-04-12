@@ -28,7 +28,7 @@ jobs:
           context: ./
           file: ./Dockerfile
           push: true
-          tags: juarezer7c/simplewhale:latest
+          tags: ms-config-server:latest
 
       - name: Image digest
         run: echo ${{ steps.docker_build.outputs.digest }}
